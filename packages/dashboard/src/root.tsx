@@ -13,6 +13,7 @@ import { RunDetailsView } from './run/runDetails/runDetailsView';
 import { RunRedirect } from './run/runsRedirect';
 import { RunsView } from './run/runsView';
 import { theme } from './theme';
+import { environment } from '@sorry-cypress/dashboard/state/environment';
 
 class ErrorBoundary extends React.Component<
   unknown,
@@ -53,11 +54,12 @@ class ErrorBoundary extends React.Component<
   }
 }
 export const Root = () => {
+  const basePath = environment.BASE_PATH;
   return (
     <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Router>
+        <Router basename={basePath}>
           <ErrorBoundary>
             <Layout>
               <Routes>

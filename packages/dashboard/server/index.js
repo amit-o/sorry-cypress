@@ -1,13 +1,13 @@
 require('dotenv').config();
 const { app } = require('./app');
-const { PORT } = require('./config');
+const { PORT, BASE_PATH } = require('./config');
 
 async function main() {
   app.on('error', (error) => {
     throw error;
   });
   app.listen(PORT, () => {
-    console.log(`Listening on http://localhost:${PORT}...`);
+    console.log(`Listening on http://localhost:${PORT}${BASE_PATH}...`);
   });
 }
 

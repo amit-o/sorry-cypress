@@ -12,6 +12,7 @@ const SORRY_CYPRESS_ENVIRONMENT = JSON.stringify({
   GRAPHQL_CLIENT_CREDENTIALS,
   GRAPHQL_SCHEMA_URL,
   CI_URL,
+  BASE_PATH,
 });
 
 app.set('view engine', 'ejs');
